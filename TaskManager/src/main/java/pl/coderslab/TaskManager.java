@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -62,6 +63,7 @@ public class TaskManager {
                 case "exit":
                     break;
                 case "add":
+                    addTask();
                     break;
                 case "remove":
                     break;
@@ -73,5 +75,20 @@ public class TaskManager {
             }
             printOptions(OPTIONS);
         }
+    }
+    public static void addTask(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Describe task");
+        String describe = scan.nextLine();
+        System.out.println("Task date");
+        String data = scan.nextLine();
+        System.out.println("How important is new task? true/false");
+        String important = scan.nextLine();
+
+        tasks = Arrays.copyOf(tasks, tasks.length + 1);
+        tasks[tasks.length -1] = new String[3];
+        tasks[tasks.length - 1][0] = describe;
+        tasks[tasks.length - 1][1] = data;
+        tasks[tasks.length - 1][2] = important;
     }
 }
