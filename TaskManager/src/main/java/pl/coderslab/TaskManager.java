@@ -47,4 +47,31 @@ public class TaskManager {
         }
         return tab;
     }
+    public static void printTab(String[][] tab ){
+        for(int i =0; i< tab.length;i++){
+            System.out.print(i + " : ");
+            for(int j =0; j<tab[i].length;j++){
+                System.out.println(tab[i][j] + " " );
+            }
+            System.out.println();
+        }
+        Scanner scan = new Scanner(System.in);
+        while (scan.hasNextLine()){
+            String input = scan.nextLine();
+            switch (input){
+                case "exit":
+                    break;
+                case "add":
+                    break;
+                case "remove":
+                    break;
+                case "list":
+                    printTab(tasks);
+                    break;
+                default:
+                    System.out.println("Select correct option");
+            }
+            printOptions(OPTIONS);
+        }
+    }
 }
