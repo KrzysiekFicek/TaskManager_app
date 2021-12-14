@@ -14,8 +14,8 @@ public class TaskManager {
     static String[][] tasks;
 
     public static void main(String[] args) throws IOException {
-        loadDataToTab(FILE_NAME);
         printOptions(OPTIONS);
+        loadDataToTab(FILE_NAME);
     }
 
     public static void printOptions(String[] tab) {
